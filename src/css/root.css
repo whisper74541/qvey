@@ -1,4 +1,6 @@
 :root {
+
+    /* Background 만 */
     --background-color-cream : #FFF4E5;
     --background-color-dark-green: #07343B;
     --background-color-yellow: #F8A91F;
@@ -9,4 +11,12 @@
     --font-color-black: #11100F;
     --font-color-gray: #585757;
     --font-color-dark-gray: #292929;
+    --font-color-orange: #F7711E;
+    --font-color-dark-orange: #C95C19;
+
+    /* Border 만 */ 
+    --border-color-orange: #F7711E;
+    --border-color-dark-orange: #C95C19;
+
+    /* border-radius */
 }
