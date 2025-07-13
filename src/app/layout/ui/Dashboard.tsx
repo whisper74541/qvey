@@ -4,8 +4,9 @@ import style from './Dashboard.module.css'
 function Dashboard() {
     return (
         <div className={style.container}>
-            <header>header..</header>
+            <aside>aside..</aside>
             <main>
+                <header>Header..</header>
                 <Outlet />
             </main>
         </div>
