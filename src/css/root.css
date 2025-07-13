@@ -1,0 +1,12 @@
+:root {
+    --background-color-cream : #FFF4E5;
+    --background-color-dark-green: #07343B;
+    --background-color-yellow: #F8A91F;
+    --background-color-orange: #F7711E;
+
+    /* Font Color 만 */
+    --font-color-white: #F4F4F4;
+    --font-color-black: #11100F;
+    --font-color-gray: #585757;
+    --font-color-dark-gray: #292929;
+}

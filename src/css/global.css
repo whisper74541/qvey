@@ -50,8 +50,16 @@
   font-style: normal;
 }
 
-/***/
+html {
+  height: 100vh;
+  font-size: 16px;
+}
 body {
-    font-family: "NotoSansKR";
-    font-weight: 4000;
+  font-family: "NotoSansKR";
+  font-weight: 400;
+  height: 100vh;
+  background-color: var(--background-color-cream);
+}
+#root {
+  height: 100vh;
 }
