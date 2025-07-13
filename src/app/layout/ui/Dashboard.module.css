@@ -1,1 +1,8 @@
-.container { background-color: #eee; }
+.container { display: flex; height: 100%;}
+.container > header {
+    background-color: var(--background-color-dark-green);
+    height: 100%;
+    color: var(--font-color-white);;
+    padding: 1em;
+}
+.container > main { flex: 1; padding: 1em;}

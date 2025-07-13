@@ -1,4 +1,4 @@
 function HomePage() {
-    return <div>한글 테스트</div>
+    return <div>Home Page.</div>
 }
 export default HomePage
