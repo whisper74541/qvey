@@ -58,7 +58,7 @@ body {
   font-family: "NotoSansKR";
   font-weight: 400;
   height: 100vh;
-  background-color: var(--background-color-cream);
+  background-color: var(--background-color-dark-green);
 }
 #root {
   height: 100vh;

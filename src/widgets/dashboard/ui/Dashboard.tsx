@@ -1,12 +1,14 @@
 import { Outlet } from 'react-router'
 import style from './Dashboard.module.css'
+import { Header } from '../../header'
+import { Aside } from '../../aside'
 
 function Dashboard() {
     return (
         <div className={style.container}>
-            <aside>aside..</aside>
+            <Aside />
             <main>
-                <header>Header..</header>
+                <Header />
                 <Outlet />
             </main>
         </div>

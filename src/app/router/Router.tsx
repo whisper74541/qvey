@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import { HomePage } from '../../page/home'
-import Dashboard from '../layout/ui/Dashboard'
+import { Dashboard } from '../../widgets/dashboard'
 
 const router = createBrowserRouter([
     {

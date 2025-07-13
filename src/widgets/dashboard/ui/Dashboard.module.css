@@ -1,4 +1,4 @@
-.container { display: flex; height: 100%; color: var(--font-color-gray);}
+.container { display: flex; height: 100%; color: var(--font-color-gray); background-color: var(--background-color-cream);}
 .container > aside {
     background-color: var(--background-color-dark-green);
     color: var(--font-color-white);
