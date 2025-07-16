@@ -19,6 +19,11 @@ const router = createBrowserRouter([
         Component: Blank,
         children: [{ index: true, Component: RegisterPage }],
     },
+     {
+        path: '/login',
+        Component: Blank,
+        children: [{ index: true, Component: RegisterPage }],
+    },
 ])
 function Router() {
     return <RouterProvider router={router} />
