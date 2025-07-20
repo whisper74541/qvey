@@ -18,5 +18,4 @@ export const loginApi = async (params: LoginParams): Promise<LoginResponse> => {
 
     throw new Error(message);
   }
-
 };
