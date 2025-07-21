@@ -11,12 +11,12 @@ const LoginForm = () => {
     password: ''
   };
 
+  // TODO: useLoginForm():useForm()+useLogin() && useForm():범용 -> 로직 분리 예정
   const [values, setValues] = useState(initialValue);
   const [touched, setTouched] = useState({ email: false, password: false });
   const [errors, setErrors] = useState<LoginErrors>({});
 
   // onFocus -> onChange -> onBlur
-  // TODO: useLoginForm() -> 로직 분리 예정
   //기존 에러 제거
   const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
     const { name } = e.target;
@@ -89,7 +89,7 @@ const LoginForm = () => {
           required
           autoComplete="password"
         />
-         {touched.password && errors.password && <p className="error">{errors.password}</p>}
+        {touched.password && errors.password && <p className="error">{errors.password}</p>}
       </div>
       
       {/* TODO: 에러 타입에 따라 처리(ex: ErrorMessage 컴포넌트, 토스트 알림...) */}

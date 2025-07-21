@@ -15,7 +15,7 @@ export const useLogin = () => {
       const result = await loginApi(params);
       setData(result);
       // TODO: 토큰 저장 로직
-    } catch (err: any) {
+    } catch (err: unknown) {
       if (err instanceof Error) {
         setError(err.message);
       } else {

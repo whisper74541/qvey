@@ -13,9 +13,12 @@ export const loginApi = async (params: LoginParams): Promise<LoginResponse> => {
     }
 
     return { token, user }
-  } catch (error: any) {
-    const message = error.response?.data?.message || '로그인에 실패하였습니다.';
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error)) {
+      const message = error.response?.data?.message || '로그인에 실패하였습니다.';
+      throw new Error(message);
+    }
 
-    throw new Error(message);
+    throw new Error('알 수 없는 에러가 발생했습니다.');
   }
 };
