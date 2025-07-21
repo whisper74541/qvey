@@ -1,3 +1,4 @@
+// 서버에 보낼 요청 값
 export interface LoginParams {
   email: string;
   password: string;
@@ -20,3 +21,16 @@ export interface LoginResponse{
   token: string;
   user: User;
 }
+
+// 폼 내부에서 사용하는 값
+export interface LoginValues {
+  email: string;
+  password: string;
+}
+
+export type LoginErrors = Partial<Record<keyof LoginValues, string>>
+// 아래와 동일한 의미
+// type LoginErrors = {
+//   email?: string;
+//   password?: string;
+// };
