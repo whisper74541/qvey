@@ -1,2 +1,2 @@
 export { useLogin } from "./useLogin";
-export {validateLogin} from "./validateLogin"
+export { validateLogin } from "./validateLogin";
