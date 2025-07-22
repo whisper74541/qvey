@@ -1,18 +1,17 @@
 import { validateEmail, validatePassword } from "../../../shared/lib/validators";
-import type { LoginErrors, LoginValues } from "../types";
+import type { LoginValues } from "../types";
 
-export const validateLogin = (values:LoginValues):LoginErrors => {
-  const errors: LoginErrors = {};
-
-  const emailError = validateEmail(values.email);
-  if (emailError) {
-    errors.email = emailError;
+export const validateLogin = (values: LoginValues): boolean => {
+  try {
+    validateEmail(values.email);
+    validatePassword(values.password);
+    return true;
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      alert(err.message);
+    } else {
+      alert("알 수 없는 오류가 발생했습니다.")
+    }
+    return false;
   }
-
-  const passwordError = validatePassword(values.password);
-  if (passwordError) {
-    errors.password = passwordError;
-  }
-
-  return errors;
-}
+};

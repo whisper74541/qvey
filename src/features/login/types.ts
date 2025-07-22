@@ -28,7 +28,7 @@ export interface LoginValues {
   password: string;
 }
 
-export type LoginErrors = Partial<Record<keyof LoginValues, string>>
+export type LoginErrors = Partial<LoginValues>
 // 아래와 동일한 의미
 // type LoginErrors = {
 //   email?: string;

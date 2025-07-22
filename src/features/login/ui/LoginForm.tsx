@@ -2,6 +2,7 @@ import { useState } from "react"
 import type { LoginErrors, LoginValues } from "../types"
 import { validateLogin } from "../model";
 import { useLogin } from "../hook";
+import { validateEmail, validatePassword } from "../../../shared/lib/validators";
 
 const LoginForm = () => {
   const { login, error: loginError, loading } = useLogin();
@@ -34,27 +35,26 @@ const LoginForm = () => {
   };
 
   //해당 필드 유효성 검사, 에러 상태 업데이트
+  // TODO: SRP, 확장성, 의미 분산 등 문제 발생 -> 함수 수정필요
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const { name } = e.target;
     setTouched((prev) => ({ ...prev, [name]: true }));
 
-    const validationErrors = validateLogin(values);
-
-    if (validationErrors[name as keyof LoginErrors]) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: validationErrors[name as keyof LoginErrors]
-      }));
+    try {
+      if (name === "email") validateEmail(values.email);
+      if (name === "password") validatePassword(values.password);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+      setErrors((prev) => ({ ...prev, [name]: err.message }));
     }
+   }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const validationErrors = validateLogin(values);
-    setErrors(validationErrors);
-
-    if (Object.keys(validationErrors).length > 0) return;
+    const isValid = validateLogin(values);
+    if (!isValid) return;
     
     await login(values);
     console.log("로그인 성공👍 :",values);
