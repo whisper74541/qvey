@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styles from './RegisterPage.module.css'
+import viewIcon from "../../../assets/view.png"
+import hideIcon from "../../../assets/hide.png"
 
 function RegisterPage() {
     const [password, setPassword] = useState("")
@@ -51,7 +53,9 @@ function RegisterPage() {
                 className={styles.eyeButton}
                 onClick={() => setShowPassword((prev) => !prev)}
                 >
-                {showPassword ? '🙈' : '👁️'}
+                <img src={showPassword ? hideIcon : viewIcon} 
+                alt="비밀번호 보기"
+                />
                 </button>
             </div>
             </div>
@@ -72,7 +76,9 @@ function RegisterPage() {
                 className={styles.eyeButton}
                 onClick={() => setShowPasswordConfirm((prev) => !prev)}
                 >
-                {showPasswordConfirm ? '🙈' : '👁️'}
+                <img src={showPasswordConfirm ? hideIcon : viewIcon} 
+                alt="비밀번호 보기" 
+                />
                 </button>
             </div>
             {passwordError && <p className={styles.errorText}>비밀번호가 일치하지 않습니다.</p>}
@@ -121,12 +127,12 @@ function RegisterPage() {
             </div>
             </div>
 
-            <div className={styles.field}>
+            <div className={styles.field_gender}>
             <label>성별</label>
             <div className={styles.inline}>
                 <label><input type="radio" name="gender" /> 남자</label>
                 <label><input type="radio" name="gender" /> 여자</label>
-                <label><input type="radio" name="gender" /> 기타</label>
+                {/* <label><input type="radio" name="gender" /> 기타</label> */}
             </div>
             </div>
 

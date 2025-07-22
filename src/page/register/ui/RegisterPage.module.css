@@ -1,8 +1,9 @@
 .page {
+    height: 100vh;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    min-height: 100vh;
     background-color: #fefcf6;
 }
 
@@ -25,13 +26,22 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
 .field {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 10px;
+    min-height: 70px;
+    position: relative;
+}
+
+.field_gender{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 50px;
     position: relative;
 }
 
@@ -72,20 +82,25 @@
     width: 120px;
 }
 
+.inputWrapper{
+    position: relative;
+}
 .eyeButton {
     position: absolute;
-    right: 10px;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 18px;
     padding: 0;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.eyeButton img {
+    width: 20px;
+    height: 20px;
 }
 
 .termsBox {
@@ -110,5 +125,6 @@
 }
 
 .registerButton{
+    margin-top: 8px;
     border: 1px solid 
 }
