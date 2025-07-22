@@ -1,6 +1,7 @@
 import { useState } from "react"
 import type { LoginErrors, LoginValues } from "../types"
-import { useLogin, validateLogin } from "../model";
+import { validateLogin } from "../model";
+import { useLogin } from "../hook";
 
 const LoginForm = () => {
   const { login, error: loginError, loading } = useLogin();
