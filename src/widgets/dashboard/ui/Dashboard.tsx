@@ -2,6 +2,8 @@ import { Outlet } from 'react-router'
 import style from './Dashboard.module.css'
 import { Header } from '../../header'
 import { Aside } from '../../aside'
+import { RegisterPage } from '../../../page/register'
+import { NoticeNewPage } from '../../../page/noticeNew'
 
 function Dashboard() {
     return (
@@ -9,7 +11,8 @@ function Dashboard() {
             <Aside />
             <main>
                 <Header />
-                <Outlet />
+                <RegisterPage />
+                {/* <NoticeNewPage /> */}
             </main>
         </div>
     )
