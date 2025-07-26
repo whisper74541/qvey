@@ -48,4 +48,4 @@ table {
 }
 
 a {color: #fff; text-decoration: none; outline: none}
-a:hover, a:active {text-decoration: none; color:#fff; background-color:#f59000;}
+a:hover, a:active {text-decoration: none; color:#fff; background-color: var(--font-color-orange);}
