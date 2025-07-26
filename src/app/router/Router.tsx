@@ -5,6 +5,7 @@ import { Blank } from '../../widgets/blank'
 import { RegisterPage } from '../../page/register'
 import { NoticeNewPage } from '../../page/noticeNew'
 import { LoginPage } from '../../page/login'
+import { BookPage } from '../../page/book'
 
 const router = createBrowserRouter([
     {
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
         path: '/login',
         Component: Blank,
         children: [{ index: true, Component: LoginPage }],
+    },
+    {
+        path: '/book',
+        Component: Blank,                      // ← Blank 레이아웃 사용
+        children: [{ index: true, Component: BookPage }],
     },
 ])
 function Router() {
