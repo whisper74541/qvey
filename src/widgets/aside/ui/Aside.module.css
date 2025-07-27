@@ -1,0 +1,8 @@
+.container { 
+    background-color: var(--background-color-dark-green);
+    color: var(--font-color-white);
+    width: 200px;
+    font-size: 20px;
+    
+}
+.container > .logo { padding: 1em; }

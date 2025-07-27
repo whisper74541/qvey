@@ -1,9 +1,9 @@
 import { SideMenu } from '@/features/menu'
-
+import style from './Aside.module.css'
 function Aside() {
     return (
-        <aside>
-            <h2>Logo 같은거</h2>
+        <aside className={style.container}>
+            <div className={style.logo}>Logo</div>
             <SideMenu />
         </aside>
     )
