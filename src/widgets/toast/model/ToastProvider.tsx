@@ -1,11 +1,11 @@
 import { useState, type PropsWithChildren } from 'react'
-import type { ToastItem } from '../types'
+import type { ToastItemProps } from '../types'
 import { ToastContext } from './ToastContext'
 
 export const ToastProvider = ({ children }: PropsWithChildren) => {
-    const [toasts, setToasts] = useState<ToastItem[]>([])
+    const [toasts, setToasts] = useState<ToastItemProps[]>([])
 
-    const addToast = (toast: Omit<ToastItem, 'id'>) => {
+    const addToast = (toast: Omit<ToastItemProps, 'id'>) => {
         const id = Date.now()
         const newToast = {
             ...toast,

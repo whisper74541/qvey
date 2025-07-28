@@ -1,22 +1,27 @@
 :root {
-
     /* Background 만 */
-    --background-color-cream : #FFF4E5;
-    --background-color-dark-green: #07343B;
-    --background-color-yellow: #F8A91F;
-    --background-color-orange: #F7711E;
+    --background-color-cream: #fff4e5;
+    --background-color-dark-green: #07343b;
+    --background-color-yellow: #f8a91f;
+    --background-color-orange: #f7711e;
 
     /* Font Color 만 */
-    --font-color-white: #F4F4F4;
-    --font-color-black: #11100F;
+    --font-color-white: #f4f4f4;
+    --font-color-black: #11100f;
     --font-color-gray: #585757;
     --font-color-dark-gray: #292929;
-    --font-color-orange: #F7711E;
-    --font-color-dark-orange: #C95C19;
+    --font-color-orange: #f7711e;
+    --font-color-dark-orange: #c95c19;
 
-    /* Border 만 */ 
-    --border-color-orange: #F7711E;
-    --border-color-dark-orange: #C95C19;
+    /* Border 만 */
+    --border-color-orange: #f7711e;
+    --border-color-dark-orange: #c95c19;
 
     /* border-radius */
+
+    /* toast */
+    --toast-success-bg: rgba(196, 245, 186, 0.6);
+    --toast-error-bg: rgba(245, 186, 186, 0.6);
+    --toast-info-bg: rgba(188, 222, 255, 0.6);
+    --toast-warning-bg: rgba(245, 236, 186, 0.6);
 }
