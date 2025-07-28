@@ -6,6 +6,7 @@ import { RegisterPage } from '../../page/register'
 import { NoticeNewPage } from '../../page/noticeNew'
 import { LoginPage } from '../../page/login'
 import { BookPage } from '../../page/book'
+import { DevPage } from '@/page/dev/ui'
 
 const router = createBrowserRouter([
     {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
         children: [
             { index: true, Component: HomePage },
             { path: '/notice/new', Component: NoticeNewPage },
+            { path: '/dev', Component: DevPage },
         ],
     },
     {
@@ -21,14 +23,14 @@ const router = createBrowserRouter([
         Component: Blank,
         children: [{ index: true, Component: RegisterPage }],
     },
-     {
+    {
         path: '/login',
         Component: Blank,
         children: [{ index: true, Component: LoginPage }],
     },
     {
         path: '/book',
-        Component: Blank,                      // ← Blank 레이아웃 사용
+        Component: Blank, // ← Blank 레이아웃 사용
         children: [{ index: true, Component: BookPage }],
     },
 ])
