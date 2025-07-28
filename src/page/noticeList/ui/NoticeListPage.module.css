@@ -1,0 +1,35 @@
+.page {
+    padding: 32px;
+    background-color: #fefcf6;
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 14px;
+}
+
+.titleCell {
+    cursor: pointer;
+    color: #333;
+}
+
+.important {
+    background-color: #fff3f3;
+    color: #d00000;
+    font-weight: bold;
+}
