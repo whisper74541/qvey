@@ -13,7 +13,7 @@ export const ToastProvider = ({ children }: PropsWithChildren) => {
         }
 
         setToasts((prev) => [...prev, newToast])
-        setTimeout(() => removeToast(id), 3000)
+        setTimeout(() => removeToast(id), 5000)
     }
 
     const removeToast = (id: number) => {

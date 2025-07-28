@@ -3,7 +3,7 @@ import type { ToastItemProps } from '../types'
 import styles from './ToastItem.module.css'
 
 const ToastItem = (toast: ToastItemProps) => {
-    const { message, type, buttonLabel, onButtonClick } = toast
+    const { message, type, buttonLabel, onButtonClick, onClose } = toast
     const Icon = TOAST_ICON[type]
     const typeClass = styles[type] ?? ''
 
@@ -19,12 +19,7 @@ const ToastItem = (toast: ToastItemProps) => {
                     {buttonLabel}
                 </button>
             )}
-            <button
-                className={styles.closeButton}
-                onClick={() => {
-                    /* TODO: 제거 로직 예정 */
-                }}
-            >
+            <button className={styles.closeButton} onClick={onClose}>
                 ×
             </button>
         </div>
