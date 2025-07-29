@@ -1,80 +1,77 @@
 import { useEffect, useState } from 'react';
 import styles from './NoticeListPage.module.css';
-
-
-interface Notice {
-    id: number;
-    type: '공지' | '필독' | '일반';
-    title: string;
-    writer: string;
-    date: string;
-    views: number;
-    isImportant?: boolean;
-}
+import { Link } from 'react-router-dom';
+import { mockNotices } from '../mockData';
+import type { Notice } from '../mockData';
 
 export default function NoticeListPage() {
-    const [notices, setNotices] = useState<Notice[]>([]);
+const [notices, setNotices] = useState<Notice[]>([]);
+const [currentPage, setCurrentPage] = useState(1);
+const itemsPerPage = 10;
 
-    useEffect(() => {
-    // 임시 Mock Data
-    setNotices([
-        {
-        id: 1,
-        type: '필독',
-        title: '필독! 가이드 규칙 (24-06-27)',
-        writer: '운영자',
-        date: '2024-06-27',
-        views: 2103,
-        isImportant: true,
-    },
-    {
-        id: 2,
-        type: '공지',
-        title: '신규 가입자 활동규칙 안내드립니다.',
-        writer: '운영자',
-        date: '2024-03-24',
-        views: 336,
-        isImportant: true,
-    },
-    {
-        id: 3,
-        type: '일반',
-        title: '첫날에 모든 주민과 인사하는 동선',
-        writer: '은성이',
-        date: '2025-07-22',
-        views: 67,
-        },
-    ]);
-    }, []);
+useEffect(() => {
+    setNotices(mockNotices);
+}, []);
 
-    return (
+const sortedNotices = [...notices].sort((a, b) => {
+    const priority = { '필독': 2, '공지': 1, '일반': 0 };
+    const priorityDiff = priority[b.type] - priority[a.type];
+    if (priorityDiff !== 0) return priorityDiff;
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
+
+const startIndex = (currentPage - 1) * itemsPerPage;
+const endIndex = startIndex + itemsPerPage;
+const paginatedNotices = sortedNotices.slice(startIndex, endIndex);
+
+const totalPages = Math.ceil(notices.length / itemsPerPage);
+
+return (
     <div className={styles.page}>
-        <h2 className={styles.title}>공지사항</h2>
-        <table className={styles.table}>
+    <h2 className={styles.title}>공지사항</h2>
+    <table className={styles.table}>
         <thead>
-            <tr>
+        <tr>
             <th>유형</th>
             <th>제목</th>
             <th>작성자</th>
             <th>작성일</th>
             <th>조회수</th>
-            </tr>
+        </tr>
         </thead>
         <tbody>
-            {notices.map((notice) => (
+        {paginatedNotices.map((notice) => (
             <tr
-                key={notice.id}
-                className={notice.isImportant ? styles.important : ''}
+            key={notice.id}
+            className={notice.isImportant ? styles.important : ''}
             >
-                <td>{notice.type}</td>
-                <td className={styles.titleCell}>{notice.title}</td>
-                <td>{notice.writer}</td>
-                <td>{notice.date}</td>
-                <td>{notice.views}</td>
+            <td>{notice.type}</td>
+            <td className={styles.titleCell}>
+                <Link to={`/notice/${notice.id}`} className={styles.link}>
+                {notice.title.length > 50
+                    ? notice.title.slice(0, 50) + '...'
+                    : notice.title}
+                </Link>
+            </td>
+            <td>{notice.writer}</td>
+            <td>{notice.date}</td>
+            <td>{notice.views}</td>
             </tr>
-            ))}
+        ))}
         </tbody>
-        </table>
+    </table>
+
+    <div className={styles.pagination}>
+        {Array.from({ length: totalPages }, (_, i) => (
+        <button
+            key={i + 1}
+            onClick={() => setCurrentPage(i + 1)}
+            className={currentPage === i + 1 ? styles.activePage : ''}
+        >
+            {i + 1}
+        </button>
+        ))}
     </div>
-    );
+    </div>
+);
 }

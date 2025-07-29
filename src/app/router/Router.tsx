@@ -5,6 +5,8 @@ import { Blank } from '../../widgets/blank'
 import { RegisterPage } from '../../page/register'
 import { NoticeNewPage } from '../../page/noticeNew'
 import { NoticeListPage } from '../../page/noticeList'
+import { NoticeDetailPage } from '../../page/noticeList'
+
 
 const router = createBrowserRouter([
     {
@@ -12,9 +14,16 @@ const router = createBrowserRouter([
         Component: Dashboard,
         children: [
             { index: true, Component: HomePage },
-            { path: '/notice/new', Component: NoticeNewPage },
-            {path: '/notice', Component: NoticeListPage,}
         ],
+    },
+    {
+        path: '/notice',
+    Component: Blank, 
+    children: [
+        { index: true, Component: NoticeListPage },       
+        { path: 'new', Component: NoticeNewPage },        
+        { path: ':id', Component: NoticeDetailPage },  
+    ],
     },
     {
         path: '/register',

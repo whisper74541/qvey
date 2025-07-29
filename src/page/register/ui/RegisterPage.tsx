@@ -3,7 +3,7 @@ import styles from './RegisterPage.module.css'
 import viewIcon from "../../../assets/view.png"
 import hideIcon from "../../../assets/hide.png"
 
-function RegisterPage() {
+export default function RegisterPage() {
     const [password, setPassword] = useState("")
     const [passwordConfirm, setPasswordConfirm] = useState("")
     const [passwordError, setPasswordError] = useState(false)
@@ -152,4 +152,3 @@ function RegisterPage() {
     </div>
     )
 }
-export default RegisterPage
