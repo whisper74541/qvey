@@ -6,7 +6,7 @@ function App() {
     return (
         <ToastProvider>
             <Router />
-            <ToastContainer />
+            <ToastContainer position={'top-center'} size={'medium'} animation={'fade-in-up'} />
         </ToastProvider>
     )
 }
