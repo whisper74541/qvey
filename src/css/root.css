@@ -1,22 +1,28 @@
 :root {
 
+    --color-orange : #F7711E;
+    --color-dark-gray : #585757;
+    --color-dark-green : #07343B;
+
     /* Background 만 */
     --background-color-cream : #FFF4E5;
     --background-color-dark-green: #07343B;
     --background-color-yellow: #F8A91F;
-    --background-color-orange: #F7711E;
+    --background-color-orange: var(--color-orange);
 
     /* Font Color 만 */
     --font-color-white: #F4F4F4;
     --font-color-black: #11100F;
-    --font-color-gray: #585757;
+    --font-color-gray: var(--color-dark-gray);
     --font-color-dark-gray: #292929;
-    --font-color-orange: #F7711E;
+    --font-color-orange: var(--color-orange);
     --font-color-dark-orange: #C95C19;
+    --font-color-dark-green: var(--color-dark-green);
 
     /* Border 만 */ 
-    --border-color-orange: #F7711E;
+    --border-color-orange: var(--color-orange);
     --border-color-dark-orange: #C95C19;
 
     /* border-radius */
+    
 }

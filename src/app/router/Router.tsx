@@ -7,6 +7,7 @@ import { NoticeNewPage } from '../../page/noticeNew'
 import { LoginPage } from '../../page/login'
 import { BookPage } from '../../page/book'
 import { BoardPage } from '@/page/board'
+import { DevPage } from '@/page/dev/ui'
 
 const router = createBrowserRouter([
     {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
         children: [
             { index: true, Component: HomePage },
             { path: '/notice/new', Component: NoticeNewPage },
+            { path: '/dev', Component: DevPage },
         ],
     },
     {
