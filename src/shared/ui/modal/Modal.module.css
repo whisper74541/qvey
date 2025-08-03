@@ -25,9 +25,11 @@
     z-index: 1001;
 }
 .closeButton {
+    font-size: 1.5rem;
+    font-weight: 300;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
     background: transparent;
     border: none;
     color: #6b7280;

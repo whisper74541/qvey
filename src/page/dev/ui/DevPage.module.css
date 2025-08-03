@@ -69,7 +69,7 @@
 
 .passwordWrapper input {
     flex: 1;
-    padding-right: 2.5rem; /* 아이콘 공간 확보 */
+    padding-right: 2.5rem;
 }
 
 .iconButton {
@@ -112,7 +112,6 @@
 }
 
 .link:hover {
-    /* text-decoration: underline; */
     background-color: unset;
     color: #8b5cf6;
 }

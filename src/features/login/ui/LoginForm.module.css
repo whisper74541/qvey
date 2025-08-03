@@ -101,7 +101,6 @@
 }
 
 .link:hover {
-    /* text-decoration: underline; */
     background-color: unset;
     color: #8b5cf6;
 }
@@ -122,15 +121,4 @@
 .loginBtn:hover {
     background: linear-gradient(to right, #4f46e5, #7c3aed);
     color: #fff;
-}
-
-.signupBox {
-    margin-top: 2rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #6b7280;
-}
-
-.signupBox span {
-    margin-right: 0.4rem;
 }
