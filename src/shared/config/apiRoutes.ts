@@ -1,4 +1,5 @@
-const API_BASE = '/api/v1';
+const API_BASE = '/api/v1'
 
-export const LOGIN_API = `${API_BASE}/login`;
-export const BOOKS_API = `${API_BASE}/book`;
+export const LOGIN_API = `${API_BASE}/login`
+export const BOOKS_API = `${API_BASE}/book`
+export const BOARD_API = `${API_BASE}/board`
