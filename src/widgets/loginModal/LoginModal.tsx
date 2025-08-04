@@ -1,5 +1,5 @@
 import { LoginForm } from '@/features/login/ui'
-import { Modal } from '@/shared/ui/modal'
+import { Modal } from '@/shared/modal/ui/Modal'
 import styles from './LoginModal.module.css'
 
 const LoginModal = ({ onClose }: { onClose: () => void }) => {
