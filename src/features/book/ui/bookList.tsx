@@ -1,25 +1,99 @@
-import React from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { fetchBooks } from '@/features/book/api/bookApi';
-import type { Book } from '@/features/book/types';
+import { useBookList } from '../hook/useBookList'
+import type { Book } from '../types'
+import BookCard from './BookCard'
+import style from './BookList.module.css'
+const DEV_BOOK: Book = {
+    description: '퍼블리싱용 Book 입니다.',
+    title: '퍼블리싱용 문제집 1 입니다.',
+    id: 1,
+}
+function BookList() {
+    const { list } = useBookList()
 
-export const BookList: React.FC = () => {
-  const { data, isLoading, error } = useQuery<Book[], Error>({
-    queryKey: ['books'],
-    queryFn: fetchBooks,
-  });
-
-  if (isLoading) return <p>불러오는 중...</p>;
-  if (error)      return <p>오류 발생: {error.message}</p>;
-
-  return (
-    <div className="grid grid-cols-2 gap-4">
-      {data!.map((book: Book) => (
-        <div key={book.id} className="p-4 border rounded shadow">
-          <h2 className="text-xl font-bold">{book.title}</h2>
-          <p className="mt-2">{book.description}</p>
+    return (
+        <div className={style.container}>
+            <div className={style.top}>
+                <p>뭔가 들어 갈것 같은데 아이디어 없음</p>
+            </div>
+            <ul>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+                <li>
+                    <BookCard {...DEV_BOOK} />
+                </li>
+            </ul>
         </div>
-      ))}
-    </div>
-  );
-};
+    )
+}
+
+export default BookList

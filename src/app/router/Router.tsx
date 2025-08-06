@@ -17,17 +17,13 @@ const router = createBrowserRouter([
             { path: '/notice/new', Component: NoticeNewPage },
             { path: '/dev', Component: DevPage },
             { path: '/demo/toast', Component: DEMO_ToastPopupPage },
+            { path: '/book', Component: BookPage },
         ],
     },
     {
         path: '/register',
         Component: Blank,
         children: [{ index: true, Component: RegisterPage }],
-    },
-    {
-        path: '/book',
-        Component: Blank, // ← Blank 레이아웃 사용
-        children: [{ index: true, Component: BookPage }],
     },
 ])
 function Router() {
