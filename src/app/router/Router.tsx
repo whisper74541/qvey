@@ -4,7 +4,6 @@ import { Dashboard } from '../../widgets/dashboard'
 import { Blank } from '../../widgets/blank'
 import { RegisterPage } from '../../page/register'
 import { NoticeNewPage } from '../../page/noticeNew'
-import { LoginPage } from '../../page/login'
 import { BookPage } from '../../page/book'
 import { DevPage } from '@/page/dev/ui'
 import { DEMO_ToastPopupPage } from '@/page/DEMO'
@@ -24,11 +23,6 @@ const router = createBrowserRouter([
         path: '/register',
         Component: Blank,
         children: [{ index: true, Component: RegisterPage }],
-    },
-    {
-        path: '/login',
-        Component: Blank,
-        children: [{ index: true, Component: LoginPage }],
     },
     {
         path: '/book',
