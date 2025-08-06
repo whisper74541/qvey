@@ -1,0 +1,32 @@
+.card { 
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color-white);
+    padding: 1em; 
+    min-height: 120px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px #000;
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 4px 4px #000;
+}
+.card > .subject { display: flex;  font-size: 1em; align-items: center; font-size: 1.25; margin-top: 0.25em;}
+.card > .subject > i { margin-right: 0.5em;}
+.card > .subject > span { font-weight: 500;}
+
+.card > .description {
+    margin-top: 1.5em;
+    font-size: 0.75em;
+    flex: 1;
+    background-color: var(--background-color-light-gray); 
+    border-radius: 8px;
+    padding: 1em;
+}
+.card:hover > .description {
+    box-shadow: 0 0 4px inset #000;
+    transition: box-shadow 0.3s ease;
+}
