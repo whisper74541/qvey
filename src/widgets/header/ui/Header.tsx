@@ -5,8 +5,11 @@ import { useNavigator } from '@/shared/hook'
 function Header() {
     /* Hooke 으로 변경 가능 */
     const { navigate } = useNavigator()
+    // const handleRegister = useCallback(() => {
+    //     navigate('register')
+    // }, [])
     const handleRegister = useCallback(() => {
-        navigate('register')
+        navigate('signup')
     }, [])
     const handleLogin = useCallback(() => {
         /* TODO : Login Modal 이건 Page 이든 Login UI로 전환 해야함 */

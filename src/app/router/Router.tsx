@@ -9,6 +9,7 @@ import { BookPage } from '../../page/book'
 import { BoardPage } from '@/page/board'
 import { DevPage } from '@/page/dev/ui'
 import { DEMO_ToastPopupPage } from '@/page/DEMO'
+import { SignupPage } from '@/page/signup'
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
         path: '/board',
         Component: Blank,
         children: [{ index: true, Component: BoardPage }],
+    },
+    {
+        path: '/signup',
+        Component: Blank,
+        children: [{ index: true, Component: SignupPage }],
     },
 ])
 function Router() {
