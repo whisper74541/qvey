@@ -2,13 +2,13 @@ import { useState } from 'react'
 import type { LoginErrors, LoginValues } from '../types'
 import { validateLogin } from '../model'
 import { useLogin } from '../hook'
+import styles from './LoginForm.module.css'
+import { VisibilityOffRounded, VisibilityRounded } from '@mui/icons-material'
 import { validateEmail, validatePassword } from '@/shared/lib/validators'
-import { useToast } from '@/widgets/toast/hooks'
-import { ToastError } from '@/shared/errors'
 
 const LoginForm = () => {
     const { login, loading } = useLogin()
-    const { addToast } = useToast()
+
     // TODO: 폼 초기값(model/initialVlaues.ts)로 분리
     const initialValue: LoginValues = {
         email: '',
@@ -52,30 +52,25 @@ const LoginForm = () => {
         }
     }
 
-    // TODO: 백엔드와 로그인 연결
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
 
-        try {
-            const isValid = validateLogin(values)
-            if (!isValid) return
+        const isValid = validateLogin(values)
+        if (!isValid) return
 
-            await login(values)
-            addToast({ type: 'success', message: '로그인 성공👍' })
-            console.log('로그인 성공👍 :', values)
-            // TODO: 성공시 navigate
-        } catch (err: unknown) {
-            if (err instanceof ToastError) {
-                addToast({ type: err.toastType, message: err.message })
-            } else {
-                addToast({ type: 'error', message: '알 수 없는 오류가 발생했습니다.' })
-            }
-        }
+        await login(values)
+        console.log('로그인 성공👍 :', values)
+    }
+
+    const [showPassword, setShowPassword] = useState(false)
+
+    const togglePassword = () => {
+        setShowPassword((prev) => !prev)
     }
 
     return (
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className={styles.formField}>
                 <label htmlFor="email">이메일</label>
                 <input
                     type="email"
@@ -84,30 +79,49 @@ const LoginForm = () => {
                     onChange={handleChange}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
-                    placeholder="이메일을 입력해주세요"
-                    required
+                    placeholder="test@example.com"
                     autoComplete="email"
                 />
-                {touched.email && errors.email && <p className="error">{errors.email}</p>}
+                {touched.email && errors.email && <p className={styles.message}>{errors.email}</p>}
             </div>
-            <div>
+            <div className={styles.formField}>
                 <label htmlFor="password">비밀번호</label>
-                <input
-                    type="password"
-                    name="password"
-                    value={values.password}
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    placeholder="비밀번호를 입력해주세요"
-                    required
-                    autoComplete="password"
-                />
-                {touched.password && errors.password && <p className="error">{errors.password}</p>}
+                <div className={styles.passwordWrapper}>
+                    <input
+                        type={showPassword ? 'text' : 'password'}
+                        name="password"
+                        value={values.password}
+                        onChange={handleChange}
+                        onFocus={handleFocus}
+                        onBlur={handleBlur}
+                        placeholder="••••••••"
+                        autoComplete="password"
+                    />
+                    <button
+                        type="button"
+                        className={styles.iconButton}
+                        onClick={togglePassword}
+                        aria-label="Toggle password visibility"
+                    >
+                        {showPassword ? <VisibilityRounded /> : <VisibilityOffRounded />}
+                    </button>
+                </div>
+                {touched.password && errors.password && <p className={styles.message}>{errors.password}</p>}
             </div>
-
+            <div className={styles.row}>
+                <label className={styles.checkbox}>
+                    <input type="checkbox" />
+                    <span>Remember me</span>
+                </label>
+                <a href="#" className={styles.link}>
+                    Forgot Password?
+                </a>
+            </div>
+            {/* TODO: 에러 타입에 따라 처리(ex: ErrorMessage 컴포넌트, 토스트 알림...) */}
             {/* {loginError && <p className="error">{loginError}</p>} */}
-            <button type="submit">{loading ? '로그인 중' : '로그인'}</button>
+            <button type="submit" className={styles.loginBtn}>
+                {loading ? '로그인 중' : 'Login'}
+            </button>
         </form>
     )
     // TODO: <div><label><input/> 컴포넌트 분리
