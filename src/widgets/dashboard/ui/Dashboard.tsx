@@ -1,10 +1,7 @@
-import { Outlet } from 'react-router'
 import style from './Dashboard.module.css'
 import { Header } from '../../header'
 import { Aside } from '../../aside'
-import { RegisterPage } from '../../../page/register'
-import { NoticeNewPage } from '../../../page/noticeNew'
-import { NoticeListPage } from '../../../page/noticeList'
+import { Outlet } from 'react-router'
 
 function Dashboard() {
     return (
@@ -12,9 +9,7 @@ function Dashboard() {
             <Aside />
             <main>
                 <Header />
-                {/* <RegisterPage /> */}
-                {/* <NoticeNewPage /> */}
-                <NoticeListPage />
+                <Outlet />
             </main>
         </div>
     )

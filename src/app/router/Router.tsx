@@ -21,16 +21,15 @@ const router = createBrowserRouter([
             { path: '/notice/new', Component: NoticeNewPage },
             { path: '/dev', Component: DevPage },
             { path: '/demo/toast', Component: DEMO_ToastPopupPage },
+            {
+                path: '/notice',
+                children: [
+                    { index: true, Component: NoticeListPage },
+                    { path: 'new', Component: NoticeNewPage },
+                    { path: ':id', Component: NoticeDetailPage },
+                ],
+            },
         ],
-    },
-    {
-        path: '/notice',
-    Component: Blank, 
-    children: [
-        { index: true, Component: NoticeListPage },       
-        { path: 'new', Component: NoticeNewPage },        
-        { path: ':id', Component: NoticeDetailPage },  
-    ],
     },
     {
         path: '/register',
