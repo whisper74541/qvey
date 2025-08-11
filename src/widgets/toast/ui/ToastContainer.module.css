@@ -1,0 +1,43 @@
+.container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 9999;
+    width: 300px;
+    max-width: 90vw;
+}
+
+/* 위치별 포지션 */
+.top-left {
+    top: 24px;
+    left: 24px;
+    align-items: flex-start;
+}
+
+.top-center {
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top-right {
+    top: 24px;
+    right: 24px;
+}
+
+.bottom-left {
+    bottom: 24px;
+    left: 24px;
+}
+
+.bottom-center {
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottom-right {
+    bottom: 24px;
+    right: 24px;
+}

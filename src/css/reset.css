@@ -47,22 +47,5 @@ table {
 	border-spacing: 0;
 }
 
-button {
-	border: none;
-    background-color: rgba(0, 0, 0, 0);
-	color: var(--font-color-orange);
-	font-weight: 600;
-	cursor: pointer;
-	padding: 0.5em 1em;
-	border-radius: 6px;
-}
-button:hover {
-	color: var(--font-color-dark-orange);
-}
-
-button.outline {
-	border: 2px solid var(--border-color-orange);
-}
-button.outline:hover {
-	border: 2px solid var(--border-color-dark-orange);
-}
+a {color: #fff; text-decoration: none; outline: none}
+a:hover, a:active {text-decoration: none; color:#fff; background-color: var(--font-color-orange);}

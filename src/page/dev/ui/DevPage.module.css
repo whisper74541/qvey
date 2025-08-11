@@ -1,0 +1,146 @@
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    border: solid 0.25rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--font-color-black);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--font-color-gray);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.formField label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--font-color-dark-gray);
+    margin-bottom: 0.5rem;
+}
+
+.formField input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    background-color: #f9fafb;
+    transition: border 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.formField input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    background-color: #fff;
+}
+
+.message {
+    font-size: 0.75rem;
+    color: #d64047;
+    margin-top: 0.4rem;
+    min-height: 1rem;
+    line-height: 1rem;
+}
+
+.passwordWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.passwordWrapper input {
+    flex: 1;
+    padding-right: 2.5rem;
+}
+
+.iconButton {
+    position: absolute;
+    right: 0.75rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 100%;
+}
+
+.iconButton:hover {
+    color: #4f46e5;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #374151;
+}
+
+.link {
+    color: #4f46e5;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.link:hover {
+    background-color: unset;
+    color: #8b5cf6;
+}
+
+.loginBtn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(to right, #6366f1, #8b5cf6);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.loginBtn:hover {
+    background: linear-gradient(to right, #4f46e5, #7c3aed);
+    color: #fff;
+}
+
+.signupBox {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.signupBox span {
+    margin-right: 0.4rem;
+}
