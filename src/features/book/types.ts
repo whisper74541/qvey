@@ -8,3 +8,8 @@ export interface BookListResponse {
     data: Book[]
     count: number
 }
+
+export interface CreateBookPayload {
+    title: string
+    description: string
+}

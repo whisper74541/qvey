@@ -4,7 +4,11 @@ import { Dashboard } from '../../widgets/dashboard'
 import { Blank } from '../../widgets/blank'
 import { RegisterPage } from '../../page/register'
 import { NoticeNewPage } from '../../page/noticeNew'
+import { NoticeListPage } from '../../page/noticeList'
+import { NoticeDetailPage } from '../../page/noticeList'
+
 import { BookPage } from '../../page/book'
+import { BoardPage } from '@/page/board'
 import { DevPage } from '@/page/dev/ui'
 import { DEMO_ToastPopupPage } from '@/page/DEMO'
 
@@ -18,6 +22,14 @@ const router = createBrowserRouter([
             { path: '/dev', Component: DevPage },
             { path: '/demo/toast', Component: DEMO_ToastPopupPage },
             { path: '/book', Component: BookPage },
+            {
+                path: '/notice',
+                children: [
+                    { index: true, Component: NoticeListPage },
+                    { path: 'new', Component: NoticeNewPage },
+                    { path: ':id', Component: NoticeDetailPage },
+                ],
+            },
         ],
     },
     {
