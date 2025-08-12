@@ -8,7 +8,7 @@ const DEV_BOOK: Book = {
     id: 1,
 }
 function BookList() {
-    const { list } = useBookList()
+    const {} = useBookList()
 
     return (
         <div className={style.container}>

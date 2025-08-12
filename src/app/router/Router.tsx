@@ -8,7 +8,6 @@ import { NoticeListPage } from '../../page/noticeList'
 import { NoticeDetailPage } from '../../page/noticeList'
 
 import { BookPage } from '../../page/book'
-import { BoardPage } from '@/page/board'
 import { DevPage } from '@/page/dev/ui'
 import { DEMO_ToastPopupPage } from '@/page/DEMO'
 

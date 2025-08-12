@@ -4,7 +4,7 @@ import { getSideMenuList } from '../lib'
 import { Link } from 'react-router'
 import style from './SideMenu.module.css'
 function SideMenu() {
-    const [menus, setMenus] = useState<Menu[]>(getSideMenuList)
+    const [menus] = useState<Menu[]>(getSideMenuList)
     return (
         <nav className={style.container}>
             <ul>
