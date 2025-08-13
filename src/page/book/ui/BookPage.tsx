@@ -10,8 +10,6 @@ function BookPage() {
                 style={{
                     backgroundColor: '#fff',
                     flex: 1,
-                    padding: '1em',
-                    margin: '0em 1.5em 2em 1.5em',
                     overflowY: 'auto',
                 }}
             >
