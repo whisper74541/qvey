@@ -3,12 +3,16 @@
     --color-orange : #F7711E;
     --color-dark-gray : #585757;
     --color-dark-green : #07343B;
+    --color-white: #fff;
+    --color-light-gray : #ebebeb;
 
     /* Background 만 */
     --background-color-cream : #FFF4E5;
     --background-color-dark-green: #07343B;
     --background-color-yellow: #F8A91F;
     --background-color-orange: var(--color-orange);
+    --background-color-white: var(--color-white);
+    --background-color-light-gray : var(--color-light-gray);
 
     /* Font Color 만 */
     --font-color-white: #F4F4F4;
@@ -28,4 +32,7 @@
     --toast-error-bg: rgba(245, 186, 186, 0.6);
     --toast-info-bg: rgba(188, 222, 255, 0.6);
     --toast-warning-bg: rgba(245, 236, 186, 0.6);
+
+    /* scroll */
+    --scrollbar-width: 8px;
 }

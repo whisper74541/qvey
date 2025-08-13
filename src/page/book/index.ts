@@ -1,1 +1,1 @@
-export { BookPage } from './ui/BookPage'
+export { default as BookPage } from './ui/BookPage'

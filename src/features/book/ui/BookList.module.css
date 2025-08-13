@@ -1,0 +1,10 @@
+.container { width: 300px; display: flex; flex-direction: column; min-height: 0;}
+
+.container > .top { display: flex; justify-content: center; margin: 0.5em 1em; background-color: #fff; }
+.container > ul {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    padding-left: var(--scrollbar-width);
+}

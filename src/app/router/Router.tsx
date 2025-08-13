@@ -8,7 +8,6 @@ import { NoticeListPage } from '../../page/noticeList'
 import { NoticeDetailPage } from '../../page/noticeList'
 
 import { BookPage } from '../../page/book'
-import { BoardPage } from '@/page/board'
 import { DevPage } from '@/page/dev/ui'
 import { DEMO_ToastPopupPage } from '@/page/DEMO'
 
@@ -21,6 +20,7 @@ const router = createBrowserRouter([
             { path: '/notice/new', Component: NoticeNewPage },
             { path: '/dev', Component: DevPage },
             { path: '/demo/toast', Component: DEMO_ToastPopupPage },
+            { path: '/book', Component: BookPage },
             {
                 path: '/notice',
                 children: [
@@ -35,16 +35,6 @@ const router = createBrowserRouter([
         path: '/register',
         Component: Blank,
         children: [{ index: true, Component: RegisterPage }],
-    },
-    {
-        path: '/book',
-        Component: Blank, // ← Blank 레이아웃 사용
-        children: [{ index: true, Component: BookPage }],
-    },
-    {
-        path: '/board',
-        Component: Blank,
-        children: [{ index: true, Component: BoardPage }],
     },
 ])
 function Router() {

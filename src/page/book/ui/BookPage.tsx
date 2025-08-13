@@ -1,16 +1,29 @@
-import React from 'react'
-import { BookForm, BookList } from '@/features/book/ui'
+import BookCard from '@/features/book/ui/BookCard'
+import style from './BookPage.module.css'
+import { BookList } from '@/features/book/ui'
 
-export const BookPage: React.FC = () => (
-    <main>
-        <h1>문제집 관리</h1>
-        <section>
-            <h2>새 문제집 등록</h2>
-            <BookForm />
-        </section>
-        <section>
-            <h2>문제집 목록</h2>
+function BookPage() {
+    return (
+        <div className={style.container}>
             <BookList />
-        </section>
-    </main>
-)
+            <div
+                style={{
+                    backgroundColor: '#fff',
+                    flex: 1,
+                    overflowY: 'auto',
+                }}
+            >
+                <h1 style={{ fontSize: '1.5em' }}>선택한 문제집</h1>
+                <BookCard description="문제 설명" id={1} title="문제 1" key={2} />
+                <BookCard description="문제 설명" id={1} title="문제 1" key={2} />
+                <BookCard description="문제 설명" id={1} title="문제 1" key={2} />
+                <BookCard description="문제 설명" id={1} title="문제 1" key={2} />
+                <BookCard description="문제 설명" id={1} title="문제 1" key={2} />
+                <BookCard description="문제 설명" id={1} title="문제 1" key={2} />
+                <BookCard description="문제 설명" id={1} title="문제 1" key={2} />
+                <BookCard description="문제 설명" id={1} title="문제 1" key={2} />
+            </div>
+        </div>
+    )
+}
+export default BookPage

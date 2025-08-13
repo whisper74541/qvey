@@ -9,7 +9,9 @@ function Dashboard() {
             <Aside />
             <main>
                 <Header />
-                <Outlet />
+                <div>
+                    <Outlet />
+                </div>
             </main>
         </div>
     )

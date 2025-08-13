@@ -1,2 +1,2 @@
-export * from './bookList'
-export * from './bookForm'
+export { default as BookList } from './BookList'
+export * from './BookForm'
