@@ -1,21 +1,18 @@
-import { useQuery } from '@tanstack/react-query'
+import { useEffect, useState } from 'react'
 import { fetchBooks } from '../api'
 import type { Book } from '../types'
 
-interface BookListResult {
-    list: Book[] | undefined
-    loading: boolean
-    error: Error | null
-}
-export const useBookList = (): BookListResult => {
-    const { data, isLoading, error } = useQuery<Book[], Error>({
-        queryKey: ['books'],
-        queryFn: fetchBooks,
-    })
+export function useBookList() {
+    const [books, setBooks] = useState<Book[]>([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState<Error | null>(null)
 
-    return {
-        list: data,
-        loading: isLoading,
-        error,
-    }
+    useEffect(() => {
+        fetchBooks()
+            .then(setBooks)
+            .catch(setError)
+            .finally(() => setLoading(false))
+    }, [])
+
+    return { books, loading, error }
 }
